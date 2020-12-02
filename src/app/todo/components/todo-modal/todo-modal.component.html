@@ -1,0 +1,23 @@
+<div class="modal">
+    <div class="modal-content">
+        <form [formGroup]="todoForm">
+            <label>Name:</label>
+            <input type="text" formControlName="name">
+            <label>Date:</label>
+            <input type="date" formControlName="date">
+            <label>Status:</label>
+            <input type="checkbox" formControlName="status">
+        </form>
+
+        <div class="inputError" *ngIf="nameControl.errors?.required">
+            Name is required
+        </div>
+
+        <div class="inputError" *ngIf="dateControl.errors?.required">
+            Date is required
+        </div>
+        
+        <button [disabled]="nameControl.errors || dateControl.errors" (click)="saveClicked.emit(todoForm.value)">Save</button>
+        <button (click)="cancelClicked.emit()">Cancel</button>
+    </div>
+</div>

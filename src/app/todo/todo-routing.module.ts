@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { appRoutes } from './appRoutes';
+import { todoRoutes } from './todoRoutes';
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [RouterModule.forChild(todoRoutes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class TodoRoutingModule { }

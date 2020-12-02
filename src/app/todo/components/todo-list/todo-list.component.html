@@ -1,0 +1,28 @@
+<h1>Todo list:</h1>
+<button (click)="showEditModal(0)">Add todo</button>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr *ngFor="let todo of todos">
+        <td>{{todo.id}}</td>
+        <td>{{todo.name}}</td>
+        <td>{{todo.date}}</td>
+        <td>
+            <input type="checkbox" [checked]="todo.status" (change)="todoStatusChanged(todo, $event)">
+        </td>
+        <td>
+            <button (click)="showEditModal(todo.id)">edit</button>
+        </td>
+        <td>
+            <button (click)="deleteClicked(todo.id)">X</button>
+        </td>
+    </tr>
+</table>
+
+<aea-todo-modal *ngIf="editModal.enabled" [id]="editModal.todoId" (saveClicked)="saveTodo($event)" (cancelClicked)="hideEditModal()"></aea-todo-modal>

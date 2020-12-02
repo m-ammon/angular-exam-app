@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Get rid of bugs",
+        "date": "2020-12-01",
+        "status": true
+    },
+    {
+        "id": 2,
+        "name": "Do a barrel roll",
+        "date": "2020-03-01",
+        "status": false
+    }
+]
